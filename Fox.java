@@ -9,6 +9,7 @@ public class Fox extends SmoothMover
     GreenfootImage[] images = new GreenfootImage[10];
     SimpleTimer animTimer = new SimpleTimer();
 
+    // Constructor
     public Fox(){
         // Load images    
         for(int i = 0; i < 10; i++){
@@ -17,7 +18,16 @@ public class Fox extends SmoothMover
         }
         setImage(images[0]);
         animTimer.mark();
+        
+        
     }
+    
+    // Called when actor is first added to any world
+    public void addedToWorld(World world) {
+        // Center the fox on the world
+        setLocation(world.getWidth()/2, world.getHeight()/2);
+    }
+    
 
     private int animIdx = 0;
     public void animate(){

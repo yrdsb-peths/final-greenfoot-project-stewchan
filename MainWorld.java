@@ -11,6 +11,6 @@ public class MainWorld extends World
         super(600, 400, 1);
         
         Fox fox = new Fox();
-        addObject(fox, getWidth()/2, getHeight()/2);
+        addObject(fox, 10, 10);
     }
 }
