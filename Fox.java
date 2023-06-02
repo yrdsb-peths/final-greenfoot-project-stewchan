@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * The fox.
  * This is the animal we want to catch in our game.
  */
-public class Fox extends Actor
+public class Fox extends SmoothMover
 {
     GreenfootImage[] images = new GreenfootImage[10];
     SimpleTimer animTimer = new SimpleTimer();
@@ -13,7 +13,7 @@ public class Fox extends Actor
         // Load images    
         for(int i = 0; i < 10; i++){
             images[i] = new GreenfootImage("images/fox/fox_0" + i + ".png");
-            images[i].scale(50,50);
+            images[i].scale(100,100);
         }
         setImage(images[0]);
         animTimer.mark();
@@ -36,10 +36,14 @@ public class Fox extends Actor
         animate();
         
         if(Greenfoot.isKeyDown("a")){
-            move(-2);
+            move(-2.5);
         }
         if(Greenfoot.isKeyDown("d")){
             move(2);
+        }
+        // Teleport the fox
+        if(Greenfoot.isKeyDown("space")){
+            setLocation(10.34,15.89);
         }
     }
 }
